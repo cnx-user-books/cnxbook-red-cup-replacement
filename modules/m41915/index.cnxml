@@ -1,0 +1,36 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>High-Level Overview (Part 2)</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41915</md:content-id>
+  <md:title>High-Level Overview (Part 2)</md:title>
+  <md:abstract/>
+  <md:uuid>ac53c83a-6393-48ea-a9ba-707fb626b1a1</md:uuid>
+</metadata>
+
+<content>
+    <para id="id1167883258814"><title>Replacement</title>Once all of the cups have been identified the replacement process begins by breaking up the area surrounding each cup into small boxes and examining each one individually. We then cycle through a bank of re-sized possible replacement images, breaking the corresponding area into the same sized chunks.  We calculate the cross correlation between each box, giving us an idea as to how well the replacement image matches the area surrounding the cup in the actual picture.  In order for the final product to look cohesive, the replacement image needs to “fit” the area surrounding the hole left by the cup.  The correlation between the cup itself and the object in the replacement image are inconsequential because the object will completely replace the cup after the replacement. Thus, only the correlation of the surrounding areas determine the selection of our replacement image.</para>
+    <para id="id1167887275170">
+      <figure id="id1167881630850">
+        <media id="id1167881630850_media" alt="">
+          <image mime-type="image/jpg" src="../../media/Picture 7.jpg" id="id1167881630850__onlineimage" height="260" width="418"/>
+        </media>
+      </figure>
+    </para>
+    <para id="id1167883124156">The correlation of each pair of boxes is calculated in the same way as in the identification process, by taking the sum of products of each pixel. Once every pair of boxes has had its correlation calculated, the best match in the replacement bank is determined, and is placed in the position the detected red cup occupies. The best match does not necessarily have the most boxes with the highest correlation, or have the highest total correlation. Instead, some boxes are given a greater weight based on results from running an edge detector on each box. If the box contains more edges, it is given a greater weight. This is because it is most important to match edges when replacing the red solo cup, particularly hands. It is more obvious when edges do not match, and therefore edges are given a higher priority when selecting a replacement image. The replacement bank contains pictures of objects being held in hands in different orientations, so this methodology of weighting the boxes differently should lead to the most visually pleasing replacement possible.</para>
+    <para id="id1167887180440">
+      <figure id="id1167883585021">
+        <media id="id1167883585021_media" alt="">
+          <image mime-type="image/jpg" src="../../media/Picture 8.jpg" id="id1167883585021__onlineimage" height="218" width="286"/>
+        </media>
+      </figure>
+    </para>
+    <para id="id1167905806980">The surrounding areas whose correlation was calculated are blurred and combined with the area surrounding the hole using a simple linear intensity blend to further facilitate blending of the replacement image with the image being filtered.</para>
+    <para id="id1167884554561">
+      <figure id="id1167883461487">
+        <media id="id1167883461487_media" alt="">
+          <image mime-type="image/jpg" src="../../media/Picture 9.jpg" id="id1167883461487__onlineimage" height="360" width="305"/>
+        </media>
+      </figure>
+    </para>
+  </content>
+</document>

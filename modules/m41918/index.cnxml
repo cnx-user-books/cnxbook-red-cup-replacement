@@ -1,0 +1,44 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>High-Level Overview:</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41918</md:content-id>
+  <md:title>High-Level Overview:</md:title>
+  <md:abstract/>
+  <md:uuid>451da12a-8ca7-4464-aa94-e0a0c78a74fa</md:uuid>
+</metadata>
+
+<content>
+    <para id="id1171789923300">
+      <emphasis effect="underline">High-Level Overview:</emphasis>
+    </para>
+    <para id="id1171793814159">The goal of our project was to write a function that allowed students to "fix" pictures before uploading them to Facebook.  Due to the time constraints of the project, we decided to define "fix" as altering a picture so that if one casually glanced at it, they would not be able to tell that it had been changed.  Below are two figures that demonstrate this casual glance test. </para>
+    
+    
+    <para id="eip-476">Figure 1:</para><code id="eip-813" display="block"><media id="figureone" alt="one">
+	   
+  <image mime-type="image/jpeg" src="../../media/fig1.jpg"/>
+		 
+</media></code><para id="eip-351">Figure 2:</para><code id="eip-827" display="block"><media id="figuretwp" alt="two">
+	   
+  <image mime-type="image/jpeg" src="../../media/fig2.jpg"/>
+		 
+</media></code><para id="id1171786917810">It is visually obvious that Figure 1 has been "fixed" to produce Figure 2.  Looking closely at Figure 2 alone, it is also blatant that many of the "fixed" objects look slightly strange and out of place.  This imperfection is intended. Our goal was not to make the "fixed" picture look perfect, but to make it look passable if viewed briefly when scrolling through countless Facebook pictures.  This way, if a student’s relative or future employer finds their Facebook page, they will not find any suspect pictures while scanning over the thousands of tagged photographs.  In addition to this casual glance limitation, we also decided to only remove red cups from pictures.  There are simply too many suspect items that college students can be holding these days, and identifying them all would be absolutely impossible.  Thus we decided to only identify red solo cups as a “proof of concept.”  This decision was made because red cups are fairly easy to identify with their red base and white top.</para>
+    
+    
+    <para id="eip-610">The function we used to “fix” pictures can be broken down into two key processes:  first we identify the red cups in the picture, and then we replace them with more appropriate items.</para><para id="id1171787194291">
+      <emphasis effect="underline">Identification:</emphasis>
+    </para>
+    <para id="id1171786236465">We start the identification process using a process called template matching.  First, we create a bank of template images that we wish to use to identify red solo cups.  This image bank contains a variety of red solo cups with different backgrounds, angles, hands holding them, etc.  The reason for such a broad range of templates will be explained later in this module.  Then, one by one, we use each template image to identify red solo cups in the target image.  This is done by shifting the template across the target image, and computing the sum of products at each position.  This sum of products, otherwise known as the cross-correlation, between the template and the selected portion of the target image represents how closely the template and the selected portion match. This process is shown in Figure 3.</para>
+    
+    
+    <para id="eip-989">Figure 3:</para><code id="eip-670" display="block"><media id="figurethree" alt="three">
+	   
+  <image mime-type="image/jpeg" src="../../media/fig3.jpg"/>
+		 
+</media></code><para id="id1171784679000">If the calculated correlation is above a certain threshold, we save the location and size of the template and identify this position as a red solo cup.  This process is shown is Figure 4.  Once a template image has been shifted across all possible positions in the target image, the size of the target image is reduced and the shifting starts over.  This re-scaling method is repeated until the template is the same size of the target image.  The reason for re-sizing will be discussed later in this module.</para><para id="eip-437">Figure 4:</para><code id="eip-539" display="block"><media id="figurefour" alt="four">
+	   
+  <image mime-type="image/jpeg" src="../../media/fig4.jpg"/>
+		 
+</media></code>
+  </content>
+</document>
