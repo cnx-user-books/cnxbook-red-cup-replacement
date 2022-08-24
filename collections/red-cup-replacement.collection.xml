@@ -1,49 +1,18 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" authors="John Slack">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
-  <md:content-id>col11390</md:content-id>
-  <md:title>Red Cup Replacement</md:title>
-  
-  
-  <md:license url="http://creativecommons.org/licenses/by/3.0/"/>
-  <md:language>en</md:language>
-
-  
-
-  
-  
-  
-  
-  
-
-  <md:uuid>4113b59f-1d41-4ee7-9ccc-266e3d29363f</md:uuid>
-<md:slug>red-cup-replacement</md:slug>
-</metadata>
-
+    <md:content-id>col11390</md:content-id>
+    <md:title>Red Cup Replacement</md:title>
+    <md:license url="http://creativecommons.org/licenses/by/3.0/"/>
+    <md:language>en</md:language>
+    <md:uuid>4113b59f-1d41-4ee7-9ccc-266e3d29363f</md:uuid>
+    <md:slug>red-cup-replacement</md:slug>
+  </metadata>
   <col:content>
-    
-      <col:module document="m41929"/>
-        
-      
-    
-    
-      <col:module document="m41918"/>
-        
-      
-    
-    
-      <col:module document="m41915"/>
-        
-      
-    
-    
-      <col:module document="m41921"/>
-        
-      
-    
-    
-      <col:module document="m41845"/>
-        
-      
-    
+    <col:module document="m41929"/>
+    <col:module document="m41918"/>
+    <col:module document="m41915"/>
+    <col:module document="m41921"/>
+    <col:module document="m41845"/>
   </col:content>
 </col:collection>
